@@ -6,11 +6,13 @@ from handlers import client, callback, extra, admin, fsmAdminMentor, notificatio
 import logging
 from database.bot_db import sql_create
 
+
 async def on_startup(_):
     asyncio.create_task(notification.scheduler())
     await bot2.send_message(chat_id=ADMINS[0],
                            text="Bot started!")
     sql_create()
+
 
 client.register_handlers_client(dp)
 callback.register_handlers_callback(dp)
