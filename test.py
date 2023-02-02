@@ -1,4 +1,4 @@
-import time
+
 from decouple import config
 import openai
 
@@ -46,21 +46,21 @@ def get_message(message):
 #
 # asyncio.run(main())
 
-async def download_photo(photo_count):
-    await asyncio.sleep(1)
-    print(f"Photo {photo_count}...")
-
-
-async def main():
-    limit = int(input("Enter amount: "))
-    current_photo = 0
-    task_list = []
-
-    while current_photo < limit:
-        current_photo += 1
-        task = asyncio.create_task(download_photo(current_photo))
-        task_list.append(task)
-
-    await asyncio.gather(*task_list)
-
-asyncio.run(main())
+# async def download_photo(photo_count):
+#     await asyncio.sleep(1)
+#     print(f"Photo {photo_count}...")
+#
+#
+# async def main():
+#     limit = int(input("Enter amount: "))
+#     current_photo = 0
+#     task_list = []
+#
+#     while current_photo < limit:
+#         current_photo += 1
+#         task = asyncio.create_task(download_photo(current_photo))
+#         task_list.append(task)
+#
+#     await asyncio.gather(*task_list)
+#
+# asyncio.run(main())
